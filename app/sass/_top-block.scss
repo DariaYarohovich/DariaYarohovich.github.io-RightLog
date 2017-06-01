@@ -1,0 +1,68 @@
+.top-block {
+  height: 655px;
+  background-image: url("../img/top-block-bg.png");
+  background-size: cover;
+}
+
+.top-block__wrapper {
+  height: 100%;
+  padding: 40px 0;
+  background-image: url("../img/phones-img.png");
+  background-repeat: no-repeat;
+  background-position: 100% 114%;
+}
+
+.top-block__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 95px;
+}
+
+.top-block__contacts {
+  display: flex;
+  align-items: center;
+}
+
+.top-block__phone {
+  margin-right: 45px;
+  @include roboto(28px, 30px);
+  color: $white;
+}
+
+.top-block__order {
+  background-color: $green;
+  color: $white;
+}
+
+.top-block__main {
+  width: 69%;
+  height: calc(100% - 170px);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title.top-block__title {
+  margin-bottom: 55px;
+  @include roboto(46px, 56px);
+  color: $white;
+  font-weight: 300;
+}
+
+.top-block__about-btn {
+  margin-right: 17px;
+  border: 1px solid $white;
+  color: $white;
+}
+
+.top-block__how-btn {
+  background: linear-gradient(to bottom, $white1, $white2);
+  color: $font-green;
+}
+
+.top-block__download-btns {
+  align-self: flex-end;
+}
+
+.top-block__android {
+  margin-right: 20px;
+}

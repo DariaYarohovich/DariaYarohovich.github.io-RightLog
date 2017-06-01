@@ -1,0 +1,11 @@
+$white: #ffffff;
+$font-gray: #393939;
+$font-green: #157a6a;
+$green: #0c9b54;
+$white1: #fefefe;
+$white2: #dedede;
+
+@mixin roboto($size, $lineHeight) {
+  font-size: $size;
+  line-height: $lineHeight;
+}

@@ -1,0 +1,24 @@
+@import "helpers";
+@import "_top-block";
+
+.title {
+  @include roboto(40px, 42px);
+  color: $font-gray;
+}
+
+.btn {
+  padding: 15px 25px;
+  @include roboto(20px, 22px);
+  border-radius: 30px;
+}
+
+.btn_rect {
+  background-color: rgba(57, 57, 57, 0.1);
+  padding: 17px 20px 17px 55px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  color: $white;
+}
