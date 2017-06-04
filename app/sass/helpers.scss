@@ -5,7 +5,20 @@ $green: #0c9b54;
 $white1: #fefefe;
 $white2: #dedede;
 
+$font-dark: #525252;
+$func-bg: #f6f6f6;
+$green-btn: #3aa08d;
+
+$xs: 767px;
+$sm: 991px;
+$md: 1199px;
+
+
 @mixin roboto($size, $lineHeight) {
   font-size: $size;
   line-height: $lineHeight;
+}
+
+@mixin trans($time: 0.4s, $type: ease) {
+  transition: all $time $type;
 }

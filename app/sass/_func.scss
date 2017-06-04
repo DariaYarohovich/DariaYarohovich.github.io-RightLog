@@ -1,0 +1,125 @@
+
+.func {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: $func-bg;
+}
+
+.func__feature {
+  margin-bottom: 40px;
+  padding-left: 95px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+
+$func-icon: (
+  client-sever: func-icon1,
+  cross-platform: func-icon2,
+  integration: func-icon3,
+  simplicity: func-icon4
+);
+
+.func__feature {
+  @each $icon-name, $url in $func-icon {
+
+    &_#{$icon-name} {
+
+      background-image: url('../img/' + $url + '.png');
+    }
+  }
+}
+
+.func__feature-title {
+  @include roboto(24px, 20px);
+}
+
+.func__feature-desc {
+  @include roboto(16px, 30px);
+}
+
+.func__img-wrapper {
+  padding-top: 40px;
+  padding-bottom: 33px;
+}
+
+.func__img {
+  width: 100%;
+  height: auto;
+}
+
+.func__btn-wrapper {
+  text-align: center;
+}
+
+.func__btn {
+  display: inline-block;
+  padding: 0 32px;
+  box-sizing: border-box;
+  border: 1px solid $green-btn;
+  @include roboto(20px, 57px);
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  border-radius: 30px;
+  background-color: $green-btn;
+  @include trans();
+}
+
+.func__btn:hover {
+  background-color: white;
+  color: $green-btn;
+}
+
+
+
+@media (max-width: $sm) {
+  .func {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .func__feature {
+    margin-bottom: 20px;
+    background-position: 0 0;
+    background-size: 60px;
+    height: 100%;
+  }
+
+  .func__feature-title {
+    @include roboto(20px, 20px);
+  }
+
+  .func__feature-desc {
+    @include roboto(16px, 24px);
+  }
+}
+
+
+
+@media (max-width: $xs) {
+  .func {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .func__feature {
+    padding-left: 77px;
+  }
+
+  .func__feature-title {
+    @include roboto(18px, 20px);
+  }
+
+  .func__feature-desc {
+    @include roboto(14px, 22px);
+  }
+
+  .func__img-wrapper {
+    padding-top: 20px;
+  }
+
+  .func__btn {
+    width: 100%;
+  }
+}

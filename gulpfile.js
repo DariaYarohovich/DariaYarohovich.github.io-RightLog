@@ -10,12 +10,16 @@ var gulp = require('gulp'),
     pngquant     = require('imagemin-pngquant'),
     cache = require('gulp-cache'),
     autoprefixer = require('gulp-autoprefixer'),
+    csscomb = require('gulp-csscomb'),
     rigger = require('gulp-rigger');
 
 gulp.task('sass', function(){
     return gulp.src('app/sass/main.scss')
         .pipe(sass())
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(csscomb())
+        .pipe(cssnano())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream: true}))
 });
@@ -45,12 +49,6 @@ gulp.task('libsCssMin',  function () {
         .pipe(gulp.dest('app/css'))
 });
 
-gulp.task('cssMin',  function () {
-    return gulp.src('app/sass/main.css')
-        .pipe(cssnano())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('app/css'))
-});
 
 gulp.task('rigger', function () {
     return gulp.src('app/templates/*.html')
