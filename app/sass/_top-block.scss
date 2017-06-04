@@ -1,15 +1,17 @@
 .top-block {
-  height: 655px;
   background-image: url("../img/top-block-bg.png");
   background-size: cover;
 }
 
 .top-block__wrapper {
   height: 100%;
-  padding: 40px 0;
-  background-image: url("../img/phones-img.png");
-  background-repeat: no-repeat;
-  background-position: 100% 114%;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  position: relative;
+  top: 20px;
+  background-image: url("../img/phone1.png"), url("../img/phone2.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 100% 107%, 74% 98%;
 }
 
 .top-block__header {
@@ -25,13 +27,45 @@
 
 .top-block__phone {
   margin-right: 45px;
+  margin-bottom: 0;
   @include roboto(28px, 30px);
   color: $white;
 }
 
+.top-block__phone i {
+  font-style: normal;
+}
+
 .top-block__order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 295px;
+  height: 58px;
+  border: none;
   background-color: $green;
+  border-radius: 30px;
   color: $white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.top-block__order:hover {
+  color: $green;
+  background: linear-gradient(to bottom, $white1, $white2);;
+}
+
+.top-block__order_mob {
+  display: none;
+}
+
+.top-block__order .top-block__order_desc {
+  font-style: normal;
+  text-shadow: 10px 10px 4px $dark-green;
+}
+
+.top-block__order:hover .top-block__order_desc {
+  text-shadow: none;
 }
 
 .top-block__main {
@@ -48,21 +82,171 @@
   font-weight: 300;
 }
 
-.top-block__about-btn {
+.btn.top-block__about-btn {
   margin-right: 17px;
   border: 1px solid $white;
   color: $white;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn.top-block__about-btn:hover,
+.btn.top-block__about-btn:active,
+.btn.top-block__about-btn:focus {
+  border: 1px solid transparent;
+  color: $font-green;
+  background: linear-gradient(to bottom, $white1, $white2);
 }
 
 .top-block__how-btn {
   background: linear-gradient(to bottom, $white1, $white2);
   color: $font-green;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn.top-block__how-btn:hover,
+.btn.top-block__how-btn:active,
+.btn.top-block__how-btn:focus {
+  border: 1px solid $white;
+  color: $white;
+  background: transparent;
 }
 
 .top-block__download-btns {
-  align-self: flex-end;
+  margin-top: 120px;
 }
 
-.top-block__android {
+.btn.top-block__android {
   margin-right: 20px;
+  background-image: url("../img/android_logo.png");
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+
+.top-block__windows {
+  background-image: url("../img/windows_logo.png");
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+
+@media (max-width: 991px) {
+  .top-block__header {
+    margin-bottom: 55px;
+  }
+
+  .top-block__phone {
+    margin-right: 25px;
+  }
+
+  .title.top-block__title {
+    margin-bottom: 35px;
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .top-block__main {
+    height: calc(100% - 100px);
+  }
+
+  .top-block__wrapper {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-size: 28%, 20%;
+    background-position: 105% 109%, 75% 98%;
+  }
+
+  .top-block__order {
+    width: 215px;
+    height: 40px;
+  }
+
+  .top-block__phone {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+
+  .top-block__download-btns {
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-block {
+    background-image: url("../img/top-block-bg-mobile.png");
+  }
+
+  .top-block__wrapper {
+    padding-top: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-image: none;
+  }
+
+  .top-block__main {
+    width: 100%;
+  }
+
+  .title.top-block__title {
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .top-block__desc-btns {
+    width: 100%;
+  }
+
+  .btn.top-block__about-btn {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .top-block__how-btn {
+    width: 100%;
+    margin-bottom: 85px;
+  }
+
+  .top-block__download-btns {
+    width: 100%;
+    display: flex;
+  }
+
+  .btn.top-block__order {
+    width: auto;
+    padding: 10px 20px;
+  }
+
+  .btn .top-block__order_mob {
+    display: flex;
+    font-style: normal;
+  }
+
+  .top-block__order_desc {
+    display: none;
+  }
+
+  .top-block__contacts {
+    flex-direction: row-reverse;
+  }
+
+  .top-block__phone {
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+    margin-left: 25px;
+    border-radius: 50%;
+    background-color: $white;
+    background-image: url(../img/phone-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  .top-block__phone i {
+    display: none;
+  }
+
+  .top-block__download-btns {
+    margin-top: 0;
+  }
 }

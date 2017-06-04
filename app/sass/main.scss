@@ -1,5 +1,6 @@
 @import "helpers";
 @import "top-block";
+@import "companies";
 @import "func";
 @import "clients";
 @import "download";
@@ -17,22 +18,22 @@ body {
 }
 
 .btn {
+  margin-right: 0;
   padding: 15px 25px;
   @include roboto(20px, 22px);
   border-radius: 30px;
 }
 
 .btn_rect {
-  background-color: rgba(57, 57, 57, 0.1);
+  background-color: rgba(57, 57, 57, 0.2);
   padding: 17px 20px 17px 55px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 300;
-  color: $font-light;
+  color: rgba(255, 255, 255, 0.7);
 }
-
 
 .block__title {
   text-align: center;
@@ -46,10 +47,21 @@ body {
 }
 
 
-
 @media (max-width: $sm) {
   .block__title {
     @include roboto(32px, 20px);
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .btn_rect {
+    padding: 15px;
+    padding-left: 50px;
+    font-size: 14px;
   }
 }
 
@@ -58,6 +70,18 @@ body {
   .block__title {
     @include roboto(22px, 28px);
     margin-bottom: 30px;
+  }
+
+  .btn {
+    padding: 15px 20px;
+  }
+
+  .btn_rect {
+    flex-grow: 1;
+    white-space: pre-line;
+    padding: 10px;
+    padding-right: 3px;
+    padding-left: 40px;
   }
 }
 

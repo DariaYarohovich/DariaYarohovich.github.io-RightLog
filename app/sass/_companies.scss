@@ -1,0 +1,155 @@
+.companies {
+  padding-top: 40px;
+}
+
+.companies__title {
+  text-align: center;
+}
+
+.companies__list {
+  padding: 30px 140px;
+  padding-bottom: 0;
+}
+
+.companies__item {
+  margin: 0 auto;
+  margin-bottom: 45px;
+}
+
+.companies__img {
+  display: block;
+  width: 182px;
+  height: 182px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: $gray;
+  box-shadow: 2px 2px 10px 0px #cccccc;
+  cursor: pointer;
+}
+
+.companies__img:hover {
+  background: linear-gradient(to bottom right, #5fc59e, #359b8b);
+}
+
+.companies__img-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.companies__img-inner1 {
+  background-image: url("../img/comp-icon1.png");
+}
+
+.companies__img-inner2 {
+  background-image: url("../img/comp-icon2.png");
+}
+
+.companies__img-inner2:hover {
+  background-image: url("../img/comp-icon2-white.png");
+}
+
+.companies__img-inner3 {
+  background-image: url("../img/comp-icon3.png");
+}
+
+.companies__img-inner4 {
+  background-image: url("../img/comp-icon4.png");
+}
+
+.companies__img-inner5 {
+  background-image: url("../img/comp-icon5.png");
+}
+
+.companies__img-inner6 {
+  background-image: url("../img/comp-icon6.png");
+}
+
+.companies__name {
+  display: block;
+  padding-top: 10px;
+  @include roboto(24px, 20px);
+  text-align: center;
+  color: $font-gray;
+  cursor: pointer;
+}
+
+.companies__name:hover {
+  text-decoration: none;
+  color: $font-gray
+}
+
+@media (max-width: 991px) {
+  .companies {
+    padding-top: 20px;
+  }
+
+  .title.companies__title {
+    font-size: 32px;
+  }
+
+  .companies__list {
+    padding: 30px 60px;
+  }
+
+  .companies__item {
+    margin-bottom: 35px;
+  }
+
+  .companies__img {
+    width: 146px;
+    height: 146px;
+  }
+
+  .companies__name {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .companies {
+    padding-top: 20px;
+  }
+
+  .title.companies__title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .companies__list {
+    padding: 10px 20px;
+  }
+
+  .companies__item {
+    margin-bottom: 25px;
+  }
+
+  .companies__img {
+    width: 102px;
+    height: 102px;
+    margin-bottom: 0;
+  }
+
+  .companies__img-inner {
+    background-size: 45%;
+  }
+
+  .companies__img-inner2 {
+    background-size: 40%;
+  }
+
+  .companies__img-inner4 {
+    background-size: 40%;
+  }
+
+  .companies__img-inner5 {
+    background-size: 50%;
+  }
+
+  .companies__name {
+    font-size: 16px;
+  }
+}
