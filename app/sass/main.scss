@@ -1,6 +1,15 @@
 @import "helpers";
 @import "top-block";
 @import "companies";
+@import "func";
+@import "clients";
+
+
+body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 16px;
+  color: $font-dark;
+}
 
 .title {
   @include roboto(40px, 42px);
@@ -25,7 +34,19 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 991px) {
+.block__title {
+  text-align: center;
+  @include roboto(40px, 20px);
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+
+
+@media (max-width: $sm) {
+  .block__title {
+    @include roboto(32px, 20px);
+  }
+
   .btn {
     padding: 10px 20px;
     font-size: 16px;
@@ -39,7 +60,13 @@
   }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: $xs) {
+  .block__title {
+    @include roboto(22px, 28px);
+    margin-bottom: 30px;
+  }
+
   .btn {
     padding: 15px 20px;
   }
@@ -52,3 +79,4 @@
     padding-left: 40px;
   }
 }
+

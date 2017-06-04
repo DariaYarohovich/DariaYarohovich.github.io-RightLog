@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="libs/swiper/dist/css/swiper.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="libs/animate.css/animate.min.css">
 </head>
 <body>
     <div class="top-block">
@@ -43,6 +44,7 @@
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class="companies">
             <h3 class="title companies__title">Программное обеспечение для предприятий</h3>
@@ -86,5 +88,73 @@
             </div>
         </div>
     </div>
+
+    <div class="func">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="block__title">Функционал мобильной платформы RightLog</h3>
+                </div>
+                <div class="col-md-5 col-sm-7">
+                    <div class="func__features">
+                        <div class="func__feature func__feature_client-sever">
+                            <p class="func__feature-title">Клиент-сервер</p>
+                            <p class="func__feature-desc">Постоянная синхронизация позволяет управлять складом или магазином где угодно.</p>
+                        </div>
+                        <div class="func__feature func__feature_cross-platform">
+                            <p class="func__feature-title">Кроссплатформа</p>
+                            <p class="func__feature-desc">Программа работает с оперционными системами Windows CE, Windows Mobile, Android.</p>
+                        </div>
+                        <div class="func__feature func__feature_integration">
+                            <p class="func__feature-title">Интеграция</p>
+                            <p class="func__feature-desc">Легко интегрируется в вашу учетную систему 1С:Предприятие или любую другую.</p>
+                        </div>
+                        <div class="func__feature func__feature_simplicity">
+                            <p class="func__feature-title">Простота и функциональность</p>
+                            <p class="func__feature-desc">Простой и понятный программный продукт,
+                                предлагает действительно то, что вам необходимо для автоматизации операций.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-5">
+                    <div class="func__img-wrapper">
+                        <img src="img/func-img.png" alt="" class="func__img">
+                    </div>
+                    <div class="func__btn-wrapper">
+                        <button class="func__btn">Демонстрация работы</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clients" id="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="block__title">Клиенты</h3>
+                    <div class="swiper-container clients__slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide clients__slide" v-for="client in clients">
+                                <a v-bind:href="client.link" class="clients__link">
+                                    <img  class="clients__img animated"
+                                         v-bind:src="client.imgUrl"
+                                         v-bind:alt="client.alt"
+                                         v-bind:class="{ tada: client.isActive}"
+                                         v-on:mouseover="client.isActive = !client.isActive"
+                                         v-on:mouseout="client.isActive = !client.isActive">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="libs/vue/dist/vue.js"></script>
+    <script src="libs/swiper/dist/js/swiper.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
