@@ -2,6 +2,7 @@
 @import "top-block";
 @import "func";
 @import "clients";
+@import "download";
 
 
 body {
@@ -29,7 +30,7 @@ body {
   border-radius: 10px;
   font-size: 16px;
   font-weight: 300;
-  color: $white;
+  color: $font-light;
 }
 
 
@@ -38,6 +39,10 @@ body {
   @include roboto(40px, 20px);
   margin-top: 0;
   margin-bottom: 60px;
+}
+
+.block__title_light {
+  color: $font-light;
 }
 
 

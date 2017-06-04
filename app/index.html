@@ -119,7 +119,7 @@
                                     <img  class="clients__img animated"
                                          v-bind:src="client.imgUrl"
                                          v-bind:alt="client.alt"
-                                         v-bind:class="{ tada: client.isActive}"
+                                         v-bind:class="{ rubberBand: client.isActive}"
                                          v-on:mouseover="client.isActive = !client.isActive"
                                          v-on:mouseout="client.isActive = !client.isActive">
                                 </a>
@@ -132,6 +132,23 @@
             </div>
         </div>
     </div>
+
+    <div class="download">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="block__title block__title_light">Скачать приложение</h3>
+                    <p class="download__desc">Платформа разработана для ТСД и мобильных телефонов</p>
+                    <div class="download__btn-wrapper">
+                        <button class="download__btn download__btn_win">Windows CE 6.0</button>
+                        <button class="download__btn download__btn_win">Windows Mobile 6.x</button>
+                        <button class="download__btn download__btn_android">Android</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="libs/vue/dist/vue.js"></script>
     <script src="libs/swiper/dist/js/swiper.min.js"></script>
     <script src="js/scripts.js"></script>

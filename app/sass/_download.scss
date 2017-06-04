@@ -1,0 +1,113 @@
+
+.download {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url('../img/download_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.download__desc {
+  text-align: center;
+  @include roboto(22px, 20px);
+  color: $font-light;
+  margin-bottom: 60px;
+}
+
+.download__btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.download__btn {
+  margin-right: 25px;
+  padding-left: 55px;
+  padding-right: 38px;
+  min-width: 200px;
+  @include roboto(16px, 45px);
+  color: $white;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid $white;
+  border-radius: 30px;
+  background-repeat: no-repeat;
+  background-position: 28px 50%;
+  @include trans();
+}
+
+.download__btn_win {
+  background-image: url('../img/win_icon.png');
+}
+
+.download__btn_android {
+  background-image: url('../img/android_icon.png');
+  background-position: 58px 50%;
+}
+
+@keyframes shaking {
+  0%   { background-position: 28px 50%; }
+  25% { background-position: 32px 50%; }
+  50% { background-position: 26px 50%; }
+  100% { background-position: 28px 50%; }
+}
+
+@keyframes jumping {
+  0%   { background-position: 58px 50%; }
+  50% { background-position: 58px 25%; }
+  100% { background-position: 58px 50%; }
+}
+
+.download__btn_win:hover {
+  animation: shaking 0.5s infinite;
+  animation-timing-function: linear;
+  transform: scale(1.03);
+}
+
+.download__btn_android:hover {
+  animation: jumping 0.5s infinite;
+  transform: scale(1.03);
+}
+
+@media (max-width: $sm) {
+  .download {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  .download__desc {
+    @include roboto(18px, 20px);
+    margin-bottom: 40px;
+  }
+
+  .download__btn {
+    margin-right: 20px;
+  }
+}
+
+
+
+@media (max-width: $xs) {
+  .download {
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+
+  .download__desc {
+    @include roboto(14px, 22px);
+    margin-bottom: 25px;
+  }
+
+  .download__btn-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download__btn {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 80%;
+    background-position: calc(50% - 70px) 50%;
+  }
+}
