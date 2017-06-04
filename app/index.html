@@ -14,10 +14,19 @@
     <div class="top-block">
         <div class="top-block__wrapper container">
             <div class="top-block__header">
-                <a class="top-block__logo" href="#"><img src="img/logo.png"></a>
+                <a class="top-block__logo" href="#">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="img/logo-mobile.png">
+                        <source media="(max-width: 991px)" srcset="img/logo-black.png">
+                        <img src="img/logo.png">
+                    </picture>
+                </a>
                 <div class="top-block__contacts">
-                    <p class="top-block__phone">+375 33 666-64-83</p>
-                    <button class="btn top-block__order">Заявка на подключение</button>
+                    <p class="top-block__phone"><i>+375 33 666-64-83</i></p>
+                    <a class="btn top-block__order" href="#">
+                        <i class="top-block__order_desc">Заявка на подключение</i>
+                        <i class="top-block__order_mob">Подключить</i>
+                    </a>
                 </div>
             </div>
             <div class="top-block__main">
@@ -37,31 +46,43 @@
     <div class="container">
         <div class="companies">
             <h3 class="title companies__title">Программное обеспечение для предприятий</h3>
-            <div class="companies__list">
-                <article class="companies__item">
-                    <p class="companies__img"></p>
-                    <p class="companies__name">Магазин</p>
-                </article>
-                <article class="companies__item">
-                    <p class="companies__img"></p>
-                    <p class="companies__name">Склад</p>
-                </article>
-                <article class="companies__item">
-                    <p class="companies__img"></p>
-                    <p class="companies__name">Производство</p>
-                </article>
-                <article class="companies__item">
-                    <p class="companies__img"></p>
-                    <p class="companies__name">Госпредприятия</p>
-                </article>
-                <article class="companies__item">
-                    <p class="companies__img"></p>
-                    <p class="companies__name">Учреждения</p>
-                </article>
-                <article class="companies__item">
-                    <p class="companies__img"></p>
-                    <p class="companies__name">Банки</p>
-                </article>
+            <div class="companies__list row">
+                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                    <article class="companies__item">
+                        <a class="companies__img"><i class="companies__img-inner companies__img-inner1"></i></a>
+                        <a class="companies__name">Магазин</a>
+                    </article>
+                </div>
+                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                    <article class="companies__item">
+                        <a class="companies__img"><i class="companies__img-inner companies__img-inner2"></i></a>
+                        <a class="companies__name">Склад</a>
+                    </article>
+                </div>
+                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                    <article class="companies__item">
+                        <a class="companies__img"><i class="companies__img-inner companies__img-inner3"></i></a>
+                        <a class="companies__name">Производство</a>
+                    </article>
+                </div>
+                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                    <article class="companies__item">
+                        <a class="companies__img"><i class="companies__img-inner companies__img-inner4"></i></a>
+                        <a class="companies__name">Госпредприятия</a>
+                    </article>
+                </div>
+                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                    <article class="companies__item">
+                        <a class="companies__img"><i class="companies__img-inner companies__img-inner5"></i></a>
+                        <a class="companies__name">Учреждения</a>
+                    </article>
+                </div>
+                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                    <article class="companies__item">
+                        <a class="companies__img"><i class="companies__img-inner companies__img-inner6"></i></a>
+                        <a class="companies__name">Банки</a>
+                    </article>
+                </div>
             </div>
         </div>
     </div>
