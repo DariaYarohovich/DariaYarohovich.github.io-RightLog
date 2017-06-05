@@ -59,3 +59,10 @@ var swiper = new Swiper(".swiper-container", {
 	}
 });
 
+// option customize
+
+(function($) {
+    $(function() {
+        $("select").styler();
+    });
+})(jQuery);

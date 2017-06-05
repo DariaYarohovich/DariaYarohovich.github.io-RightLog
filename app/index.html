@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="libs/swiper/dist/css/swiper.min.css">
-    <link rel="stylesheet" href="css/main.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
     <link rel="stylesheet" href="libs/animate.css/animate.min.css">
+    <link rel="stylesheet" href="libs/formstyller/dist/jquery.formstyler.css">
+    <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-    <div class="top-block">
+    <section class="top-block">
         <div class="top-block__wrapper container">
             <div class="top-block__header">
                 <a class="top-block__logo" href="#">
@@ -43,9 +44,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container">
+    <section class="container">
         <div class="companies">
             <h3 class="title companies__title">Программное обеспечение для предприятий</h3>
             <div class="companies__list row">
@@ -87,9 +88,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="func">
+    <section class="func">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -126,9 +127,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="clients" id="clients">
+    <section class="clients" id="clients">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -152,9 +153,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="download">
+    <section class="download">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -168,9 +169,52 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="form-block">
+        <div class="container">
+            <div class="form-block__wrapper">
+                <h3 class="block__title">Подключить RightLog</h3>
+                <form action="" class="form">
+                    <label class="form__label">
+                        <select class="form__select selectpicker" name="business" >
+                            <option class="form__option" value="default-business" selected>Сфера деятельности</option>
+                            <option class="form__option" value="shop" >Магазин</option>
+                            <option class="form__option" value="warehouse" >Склад</option>
+                            <option class="form__option" value="production" >Производство</option>
+                            <option class="form__option" value="state-enterprise" >Госпредприятия</option>
+                            <option class="form__option" value="organization" >Учреждения</option>
+                            <option class="form__option" value="bank" >Банк</option>
+                        </select>
+                    </label>
+                    <label class="form__label">
+                        <select class="form__select" name="accounting-system" >
+                            <option class="form__option" value="default-system" selected>Система учета</option>
+                            <option class="form__option" value="one" >Один</option>
+                            <option class="form__option" value="two" >Два</option>
+                        </select>
+                    </label>
+
+                    <label class="form__label">
+                        <input class="form__input" type="text" name="name" placeholder="Ваше имя">
+                    </label>
+                    <label class="form__label">
+                        <input class="form__input" type="text" name="phone-email" placeholder="Телефон или email">
+                    </label>
+
+                    <label class="form__label form__label_txtarea ">
+                        <textarea class="form__textarea" name="message"  cols="30" rows="10"></textarea>
+                    </label>
+
+                    <button class="form__btn" type="submit">Отправить запрос на подключение</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <script src="libs/vue/dist/vue.js"></script>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/formstyller/dist/jquery.formstyler.min.js"></script>
     <script src="libs/swiper/dist/js/swiper.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
