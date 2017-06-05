@@ -11,6 +11,7 @@
 .download__desc {
   text-align: center;
   @include roboto(22px, 20px);
+  font-weight: 300;
   color: $font-light;
   margin-bottom: 60px;
 }
