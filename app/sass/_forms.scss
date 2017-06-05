@@ -22,7 +22,7 @@
 }
 
 .form__label:nth-child(2n - 1) {
-  margin-right: 30px;
+  margin-right: 40px;
 }
 
 .form__label_txtarea {
@@ -105,7 +105,7 @@
 .form__textarea {
   @extend %input__main;
   min-height: 110px;
-  width: 98%;
+  width: 100%;
   border-radius: 20px;
 }
 
@@ -173,5 +173,9 @@
 
   .form__label:nth-child(2n - 1) {
     margin-right: 0;
+  }
+
+  .form__textarea {
+    margin-bottom: 20px;
   }
 }

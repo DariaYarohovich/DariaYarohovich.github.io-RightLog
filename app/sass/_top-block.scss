@@ -1,6 +1,7 @@
 .top-block {
   background-image: url("../img/top-block-bg.png");
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .top-block__wrapper {
@@ -43,16 +44,17 @@
   width: 295px;
   height: 58px;
   border: none;
-  background-color: $green;
+  background: $green;
   border-radius: 30px;
   color: $white;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  @include trans();
 }
 
 .top-block__order:hover {
   color: $green;
   background: linear-gradient(to bottom, $white1, $white2);;
+  transform: scale(1.03);
 }
 
 .top-block__order_mob {
@@ -61,7 +63,6 @@
 
 .top-block__order .top-block__order_desc {
   font-style: normal;
-  text-shadow: 10px 10px 4px $dark-green;
 }
 
 .top-block__order:hover .top-block__order_desc {
@@ -86,7 +87,7 @@
   margin-right: 17px;
   border: 1px solid $white;
   color: $white;
-  transition: all 0.3s ease-in-out;
+  @include trans();
 }
 
 .btn.top-block__about-btn:hover,
@@ -95,12 +96,13 @@
   border: 1px solid transparent;
   color: $font-green;
   background: linear-gradient(to bottom, $white1, $white2);
+  transform: scale(1.03);
 }
 
 .top-block__how-btn {
   background: linear-gradient(to bottom, $white1, $white2);
   color: $font-green;
-  transition: all 0.3s ease-in-out;
+  @include trans();
 }
 
 .btn.top-block__how-btn:hover,
@@ -109,6 +111,7 @@
   border: 1px solid $white;
   color: $white;
   background: transparent;
+  transform: scale(1.03);
 }
 
 .top-block__download-btns {
@@ -120,12 +123,24 @@
   background-image: url("../img/android_logo.png");
   background-repeat: no-repeat;
   background-position: 15px center;
+  @include trans();
+}
+
+.btn.top-block__android:hover {
+  transform: scale(1.03);
+  color: $white;
 }
 
 .top-block__windows {
   background-image: url("../img/windows_logo.png");
   background-repeat: no-repeat;
   background-position: 15px center;
+  @include trans();
+}
+
+.top-block__windows:hover {
+  transform: scale(1.03);
+  color: $white;
 }
 
 @media (max-width: 991px) {
