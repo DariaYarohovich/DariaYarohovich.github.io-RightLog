@@ -83,7 +83,7 @@ gulp.task('img', function () {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('build', ['clean', 'img' , 'sass', 'cssMin', 'scripts'], function (){
+gulp.task('build', ['clean', 'img' , 'sass', 'scripts'], function (){
     var buildCss = gulp.src('app/css/**/*.css')
         .pipe(gulp.dest('dist/css'));
 
@@ -98,4 +98,7 @@ gulp.task('build', ['clean', 'img' , 'sass', 'cssMin', 'scripts'], function (){
 
     var moveVideo = gulp.src('app/video/*')
         .pipe(gulp.dest('dist'));
+
+    var moveLibs = gulp.src('app/libs/**/*')
+        .pipe(gulp.dest('dist/libs'));
 });
