@@ -32,6 +32,33 @@ var clients = new Vue({
 	}
 });
 
+var companies = new Vue ({
+    el: '#companies',
+    data: {
+        details: {
+            shopDetails: false,
+            warehouseDetails: false,
+            productionDetails: false,
+            soeDetails: false,
+            companiesDetails: false,
+            banksDetails: false
+        }
+
+    },
+    computed: {
+        coverActive: function() {
+            var counter = false;
+
+            for (key in this.details) {
+                if (this.details[key] === true) {
+                    counter = true;
+                }
+            }
+            return counter;
+        }
+    }
+});
+
 
 
 //mobile slider clients;

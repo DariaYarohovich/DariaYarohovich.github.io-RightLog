@@ -6,6 +6,7 @@
 @import "download";
 @import "forms";
 @import "footer";
+@import "popup";
 
 
 body {
@@ -44,8 +45,18 @@ body {
   margin-bottom: 60px;
 }
 
+.block__title_popup {
+  margin-bottom: 30px;
+  font-size: 32px;
+  line-height: normal;
+}
+
 .block__title_light {
   color: $font-light;
+}
+
+[v-cloak] {
+  display: none;
 }
 
 

@@ -9,6 +9,7 @@
 .companies__list {
   padding: 30px 140px;
   padding-bottom: 0;
+  position: relative;
 }
 
 .companies__item {
@@ -49,6 +50,10 @@
   background-image: url("../img/comp-icon1.png");
 }
 
+.companies__img-inner1:hover {
+  background-image: url("../img/comp-icon1-white.png");
+}
+
 .companies__img-inner2 {
   background-image: url("../img/comp-icon2.png");
 }
@@ -61,16 +66,32 @@
   background-image: url("../img/comp-icon3.png");
 }
 
+.companies__img-inner3:hover {
+  background-image: url("../img/comp-icon3-white.png");
+}
+
 .companies__img-inner4 {
   background-image: url("../img/comp-icon4.png");
+}
+
+.companies__img-inner4:hover {
+  background-image: url("../img/comp-icon4-white.png");
 }
 
 .companies__img-inner5 {
   background-image: url("../img/comp-icon5.png");
 }
 
+.companies__img-inner5:hover {
+  background-image: url("../img/comp-icon5-white.png");
+}
+
 .companies__img-inner6 {
   background-image: url("../img/comp-icon6.png");
+}
+
+.companies__img-inner6:hover {
+  background-image: url("../img/comp-icon6-white.png");
 }
 
 .companies__name {
