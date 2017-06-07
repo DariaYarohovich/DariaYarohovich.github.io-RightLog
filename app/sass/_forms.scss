@@ -16,17 +16,17 @@
 
 .form__label {
   margin-bottom: 25px;
-  width: 47%;
+  width: 49%;
   font-size: 18px;
   display: inline-flex;
 }
 
-.form__label:nth-child(2n - 1) {
-  margin-right: 40px;
+.form__label:nth-child(2n-1) {
+  padding-left: 4%;
 }
 
 .form__label_txtarea {
-  width: 100%;
+  width: 99%;
 }
 
 %input__main {
@@ -172,7 +172,7 @@
   }
 
   .form__label:nth-child(2n - 1) {
-    margin-right: 0;
+    padding-left: 0;
   }
 
   .form__textarea {

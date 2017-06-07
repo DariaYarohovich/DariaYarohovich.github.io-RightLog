@@ -13,665 +13,442 @@
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-    <section class="top-block">
-        <div class="top-block__wrapper container">
-            <div class="top-block__header">
-                <a class="top-block__logo" href="#">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="img/logo-mobile.png">
-                        <source media="(max-width: 991px)" srcset="img/logo-black.png">
-                        <img src="img/logo.png">
-                    </picture>
-                </a>
-                <div class="top-block__contacts">
-                    <p class="top-block__phone"><i>+375 33 666-64-83</i></p>
-                    <a class="btn top-block__order scroll" data-speed="1500" href="#form">
-                        <i class="top-block__order_desc">Заявка на подключение</i>
-                        <i class="top-block__order_mob">Подключить</i>
+    <div id="app">
+        <section class="top-block">
+            <div class="top-block__wrapper container">
+                <div class="top-block__header">
+                    <a class="top-block__logo" href="#">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="img/logo-mobile.png">
+                            <source media="(max-width: 991px)" srcset="img/logo-black.png">
+                            <img src="img/logo.png">
+                        </picture>
                     </a>
-                </div>
-            </div>
-            <div class="top-block__main">
-                <h2 class="title top-block__title">Организация и автоматизация
-                    склада и предприятия</h2>
-                <div class="top-block__desc-btns">
-                    <a class="btn top-block__about-btn" href="#">О продукте</a>
-                    <a class="btn top-block__how-btn" href="#">Как работает платформа</a>
-                </div>
-                <div class="top-block__download-btns">
-                    <a class="btn btn_rect top-block__android" href="#">Скачать для Android</a>
-                    <a class="btn btn_rect top-block__windows" href="#">Скачать для Windows</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="companies" id="companies">
-            <h3 class="title companies__title">Программное обеспечение для предприятий</h3>
-            <div class="companies__list row">
-                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                    <article class="companies__item" v-on:click="details.shopDetails = !details.shopDetails">
-                        <a class="companies__img">
-                            <i class="companies__img-inner companies__img-inner1"></i>
+                    <div class="top-block__contacts">
+                        <a href="tel:+375336666483" class="top-block__phone"><i>+375 33 666-64-83</i></a>
+                        <a class="btn top-block__order scroll" data-speed="1500" href="#form">
+                            <i class="top-block__order_desc">Заявка на подключение</i>
+                            <i class="top-block__order_mob">Подключить</i>
                         </a>
-                        <a class="companies__name">Магазин</a>
-                    </article>
-                </div>
-                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                    <article class="companies__item"  v-on:click="details.warehouseDetails = !details.warehouseDetails">
-                        <a class="companies__img"><i class="companies__img-inner companies__img-inner2"></i></a>
-                        <a class="companies__name">Склад</a>
-                    </article>
-                </div>
-                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                    <article class="companies__item"  v-on:click="details.productionDetails = !details.productionDetails">
-                        <a class="companies__img"><i class="companies__img-inner companies__img-inner3"></i></a>
-                        <a class="companies__name">Производство</a>
-                    </article>
-                </div>
-                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                    <article class="companies__item"  v-on:click="details.soeDetails = !details.soeDetails">
-                        <a class="companies__img"><i class="companies__img-inner companies__img-inner4"></i></a>
-                        <a class="companies__name">Госпредприятия</a>
-                    </article>
-                </div>
-                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                    <article class="companies__item"  v-on:click="details.companiesDetails = !details.companiesDetails">
-                        <a class="companies__img"><i class="companies__img-inner companies__img-inner5"></i></a>
-                        <a class="companies__name">Учреждения</a>
-                    </article>
-                </div>
-                <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                    <article class="companies__item"  v-on:click="details.banksDetails = !details.banksDetails">
-                        <a class="companies__img"><i class="companies__img-inner companies__img-inner6"></i></a>
-                        <a class="companies__name">Банки</a>
-                    </article>
-                </div>
-
-                <transition name="fall">
-                    <section class="popup" v-if="details.shopDetails" v-cloak>
-                        <button class="popup__cross" type="button" v-on:click="details.shopDetails = !details.shopDetails"></button>
-                        <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
-                        <div class="popup__info">
-                            <div class="popup__img-wrap">
-                                <img class="popup__img" src="img/popup-shop.png" alt="">
-                            </div>
-                            <div class="popup__desc">
-                                <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
-                                <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
-                                </p>
-
-                                <p class="pupup__ul-title">Позволяет:</p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
-                                    <li class="popup__li">количественный сбор информации;</li>
-                                    <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
-                                    <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
-                                </ul>
-
-                                <p class="pupup__ul-title"><i>Дополнительно:</i></p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
-                                    <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="popup__form-container">
-                            <div class="form-block__wrapper">
-                                <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                <form action="" class="form">
-                                    <label class="form__label">
-                                        <select class="form__select selectpicker" name="business" >
-                                            <option class="form__option" value="default-business" selected>Сфера деятельности</option>
-                                            <option class="form__option" value="shop" >Магазин</option>
-                                            <option class="form__option" value="warehouse" >Склад</option>
-                                            <option class="form__option" value="production" >Производство</option>
-                                            <option class="form__option" value="state-enterprise" >Госпредприятия</option>
-                                            <option class="form__option" value="organization" >Учреждения</option>
-                                            <option class="form__option" value="bank" >Банк</option>
-                                        </select>
-                                    </label>
-                                    <label class="form__label">
-                                        <select class="form__select" name="accounting-system" >
-                                            <option class="form__option" value="default-system" selected>Система учета</option>
-                                            <option class="form__option" value="one" >Один</option>
-                                            <option class="form__option" value="two" >Два</option>
-                                        </select>
-                                    </label>
-
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="name" placeholder="Ваше имя">
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="phone-email" placeholder="Телефон или email">
-                                    </label>
-
-                                    <label class="form__label form__label_txtarea ">
-                                        <textarea class="form__textarea" name="message"  cols="30" rows="10"></textarea>
-                                    </label>
-
-                                    <button class="form__btn" type="submit">Отправить запрос на подключение</button>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </transition>
-
-                <transition name="fall">
-                    <section class="popup" v-if="details.warehouseDetails" v-cloak>
-                        <button class="popup__cross" type="button" v-on:click="details.warehouseDetails = !details.warehouseDetails"></button>
-                        <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
-                        <div class="popup__info">
-                            <div class="popup__img-wrap">
-                                <img class="popup__img" src="img/popup-shop.png" alt="">
-                            </div>
-                            <div class="popup__desc">
-                                <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
-                                <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
-                                </p>
-
-                                <p class="pupup__ul-title">Позволяет:</p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
-                                    <li class="popup__li">количественный сбор информации;</li>
-                                    <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
-                                    <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
-                                </ul>
-
-                                <p class="pupup__ul-title"><i>Дополнительно:</i></p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
-                                    <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="popup__form-container">
-                            <div class="form-block__wrapper">
-                                <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                <form action="" class="form">
-                                    <label class="form__label">
-                                        <select class="form__select selectpicker" name="business" >
-                                            <option class="form__option" value="default-business" selected>Сфера деятельности</option>
-                                            <option class="form__option" value="shop" >Магазин</option>
-                                            <option class="form__option" value="warehouse" >Склад</option>
-                                            <option class="form__option" value="production" >Производство</option>
-                                            <option class="form__option" value="state-enterprise" >Госпредприятия</option>
-                                            <option class="form__option" value="organization" >Учреждения</option>
-                                            <option class="form__option" value="bank" >Банк</option>
-                                        </select>
-                                    </label>
-                                    <label class="form__label">
-                                        <select class="form__select" name="accounting-system" >
-                                            <option class="form__option" value="default-system" selected>Система учета</option>
-                                            <option class="form__option" value="one" >Один</option>
-                                            <option class="form__option" value="two" >Два</option>
-                                        </select>
-                                    </label>
-
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="name" placeholder="Ваше имя">
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="phone-email" placeholder="Телефон или email">
-                                    </label>
-
-                                    <label class="form__label form__label_txtarea ">
-                                        <textarea class="form__textarea" name="message"  cols="30" rows="10"></textarea>
-                                    </label>
-
-                                    <button class="form__btn" type="submit">Отправить запрос на подключение</button>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </transition>
-
-                <transition name="fall">
-                    <section class="popup" v-if="details.productionDetails" v-cloak>
-                        <button class="popup__cross" type="button" v-on:click="details.productionDetails = !details.productionDetails"></button>
-                        <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
-                        <div class="popup__info">
-                            <div class="popup__img-wrap">
-                                <img class="popup__img" src="img/popup-shop.png" alt="">
-                            </div>
-                            <div class="popup__desc">
-                                <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
-                                <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
-                                </p>
-
-                                <p class="pupup__ul-title">Позволяет:</p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
-                                    <li class="popup__li">количественный сбор информации;</li>
-                                    <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
-                                    <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
-                                </ul>
-
-                                <p class="pupup__ul-title"><i>Дополнительно:</i></p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
-                                    <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="popup__form-container">
-                            <div class="form-block__wrapper">
-                                <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                <form action="" class="form">
-                                    <label class="form__label">
-                                        <select class="form__select selectpicker" name="business" >
-                                            <option class="form__option" value="default-business" selected>Сфера деятельности</option>
-                                            <option class="form__option" value="shop" >Магазин</option>
-                                            <option class="form__option" value="warehouse" >Склад</option>
-                                            <option class="form__option" value="production" >Производство</option>
-                                            <option class="form__option" value="state-enterprise" >Госпредприятия</option>
-                                            <option class="form__option" value="organization" >Учреждения</option>
-                                            <option class="form__option" value="bank" >Банк</option>
-                                        </select>
-                                    </label>
-                                    <label class="form__label">
-                                        <select class="form__select" name="accounting-system" >
-                                            <option class="form__option" value="default-system" selected>Система учета</option>
-                                            <option class="form__option" value="one" >Один</option>
-                                            <option class="form__option" value="two" >Два</option>
-                                        </select>
-                                    </label>
-
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="name" placeholder="Ваше имя">
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="phone-email" placeholder="Телефон или email">
-                                    </label>
-
-                                    <label class="form__label form__label_txtarea ">
-                                        <textarea class="form__textarea" name="message"  cols="30" rows="10"></textarea>
-                                    </label>
-
-                                    <button class="form__btn" type="submit">Отправить запрос на подключение</button>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </transition>
-
-                <transition name="fall">
-                    <section class="popup" v-if="details.soeDetails" v-cloak>
-                        <button class="popup__cross" type="button" v-on:click="details.soeDetails = !details.soeDetails"></button>
-                        <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
-                        <div class="popup__info">
-                            <div class="popup__img-wrap">
-                                <img class="popup__img" src="img/popup-shop.png" alt="">
-                            </div>
-                            <div class="popup__desc">
-                                <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
-                                <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
-                                </p>
-
-                                <p class="pupup__ul-title">Позволяет:</p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
-                                    <li class="popup__li">количественный сбор информации;</li>
-                                    <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
-                                    <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
-                                </ul>
-
-                                <p class="pupup__ul-title"><i>Дополнительно:</i></p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
-                                    <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="popup__form-container">
-                            <div class="form-block__wrapper">
-                                <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                <form action="" class="form">
-                                    <label class="form__label">
-                                        <select class="form__select selectpicker" name="business" >
-                                            <option class="form__option" value="default-business" selected>Сфера деятельности</option>
-                                            <option class="form__option" value="shop" >Магазин</option>
-                                            <option class="form__option" value="warehouse" >Склад</option>
-                                            <option class="form__option" value="production" >Производство</option>
-                                            <option class="form__option" value="state-enterprise" >Госпредприятия</option>
-                                            <option class="form__option" value="organization" >Учреждения</option>
-                                            <option class="form__option" value="bank" >Банк</option>
-                                        </select>
-                                    </label>
-                                    <label class="form__label">
-                                        <select class="form__select" name="accounting-system" >
-                                            <option class="form__option" value="default-system" selected>Система учета</option>
-                                            <option class="form__option" value="one" >Один</option>
-                                            <option class="form__option" value="two" >Два</option>
-                                        </select>
-                                    </label>
-
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="name" placeholder="Ваше имя">
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="phone-email" placeholder="Телефон или email">
-                                    </label>
-
-                                    <label class="form__label form__label_txtarea ">
-                                        <textarea class="form__textarea" name="message"  cols="30" rows="10"></textarea>
-                                    </label>
-
-                                    <button class="form__btn" type="submit">Отправить запрос на подключение</button>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </transition>
-
-                <transition name="fall">
-                    <section class="popup" v-if="details.companiesDetails" v-cloak>
-                        <button class="popup__cross" type="button" v-on:click="details.companiesDetails = !details.companiesDetails"></button>
-                        <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
-                        <div class="popup__info">
-                            <div class="popup__img-wrap">
-                                <img class="popup__img" src="img/popup-shop.png" alt="">
-                            </div>
-                            <div class="popup__desc">
-                                <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
-                                <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
-                                </p>
-
-                                <p class="pupup__ul-title">Позволяет:</p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
-                                    <li class="popup__li">количественный сбор информации;</li>
-                                    <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
-                                    <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
-                                </ul>
-
-                                <p class="pupup__ul-title"><i>Дополнительно:</i></p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
-                                    <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="popup__form-container">
-                            <div class="form-block__wrapper">
-                                <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                <form action="" class="form">
-                                    <label class="form__label">
-                                        <select class="form__select selectpicker" name="business" >
-                                            <option class="form__option" value="default-business" selected>Сфера деятельности</option>
-                                            <option class="form__option" value="shop" >Магазин</option>
-                                            <option class="form__option" value="warehouse" >Склад</option>
-                                            <option class="form__option" value="production" >Производство</option>
-                                            <option class="form__option" value="state-enterprise" >Госпредприятия</option>
-                                            <option class="form__option" value="organization" >Учреждения</option>
-                                            <option class="form__option" value="bank" >Банк</option>
-                                        </select>
-                                    </label>
-                                    <label class="form__label">
-                                        <select class="form__select" name="accounting-system" >
-                                            <option class="form__option" value="default-system" selected>Система учета</option>
-                                            <option class="form__option" value="one" >Один</option>
-                                            <option class="form__option" value="two" >Два</option>
-                                        </select>
-                                    </label>
-
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="name" placeholder="Ваше имя">
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="phone-email" placeholder="Телефон или email">
-                                    </label>
-
-                                    <label class="form__label form__label_txtarea ">
-                                        <textarea class="form__textarea" name="message"  cols="30" rows="10"></textarea>
-                                    </label>
-
-                                    <button class="form__btn" type="submit">Отправить запрос на подключение</button>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </transition>
-
-                <transition name="fall">
-                    <section class="popup" v-if="details.banksDetails" v-cloak>
-                        <button class="popup__cross" type="button" v-on:click="details.banksDetails = !details.banksDetails"></button>
-                        <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
-                        <div class="popup__info">
-                            <div class="popup__img-wrap">
-                                <img class="popup__img" src="img/popup-shop.png" alt="">
-                            </div>
-                            <div class="popup__desc">
-                                <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
-                                <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
-                                </p>
-
-                                <p class="pupup__ul-title">Позволяет:</p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
-                                    <li class="popup__li">количественный сбор информации;</li>
-                                    <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
-                                    <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
-                                </ul>
-
-                                <p class="pupup__ul-title"><i>Дополнительно:</i></p>
-                                <ul class="popup__ul">
-                                    <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
-                                    <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="popup__form-container">
-                            <div class="form-block__wrapper">
-                                <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                <form action="" class="form">
-                                    <label class="form__label">
-                                        <select class="form__select selectpicker" name="business" >
-                                            <option class="form__option" value="default-business" selected>Сфера деятельности</option>
-                                            <option class="form__option" value="shop" >Магазин</option>
-                                            <option class="form__option" value="warehouse" >Склад</option>
-                                            <option class="form__option" value="production" >Производство</option>
-                                            <option class="form__option" value="state-enterprise" >Госпредприятия</option>
-                                            <option class="form__option" value="organization" >Учреждения</option>
-                                            <option class="form__option" value="bank" >Банк</option>
-                                        </select>
-                                    </label>
-                                    <label class="form__label">
-                                        <select class="form__select" name="accounting-system" >
-                                            <option class="form__option" value="default-system" selected>Система учета</option>
-                                            <option class="form__option" value="one" >Один</option>
-                                            <option class="form__option" value="two" >Два</option>
-                                        </select>
-                                    </label>
-
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="name" placeholder="Ваше имя">
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__input" type="text" name="phone-email" placeholder="Телефон или email">
-                                    </label>
-
-                                    <label class="form__label form__label_txtarea ">
-                                        <textarea class="form__textarea" name="message"  cols="30" rows="10"></textarea>
-                                    </label>
-
-                                    <button class="form__btn" type="submit">Отправить запрос на подключение</button>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </transition>
-
-                <transition name="cover">
-                    <div class="cover" v-if="coverActive" v-cloak></div>
-                </transition>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="func">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="block__title">Функционал мобильной платформы RightLog</h3>
-                </div>
-                <div class="col-md-5 col-sm-7">
-                    <div class="func__features">
-                        <div class="func__feature func__feature_client-sever">
-                            <p class="func__feature-title">Клиент-сервер</p>
-                            <p class="func__feature-desc">Постоянная синхронизация позволяет управлять складом или магазином где угодно.</p>
-                        </div>
-                        <div class="func__feature func__feature_cross-platform">
-                            <p class="func__feature-title">Кроссплатформа</p>
-                            <p class="func__feature-desc">Программа работает с оперционными системами Windows CE, Windows Mobile, Android.</p>
-                        </div>
-                        <div class="func__feature func__feature_integration">
-                            <p class="func__feature-title">Интеграция</p>
-                            <p class="func__feature-desc">Легко интегрируется в вашу учетную систему 1С:Предприятие или любую другую.</p>
-                        </div>
-                        <div class="func__feature func__feature_simplicity">
-                            <p class="func__feature-title">Простота и функциональность</p>
-                            <p class="func__feature-desc">Простой и понятный программный продукт,
-                                предлагает действительно то, что вам необходимо для автоматизации операций.</p>
-                        </div>
                     </div>
                 </div>
-                <div class="col-md-7 col-sm-5">
-                    <div class="func__img-wrapper">
-                        <img src="img/func-img.png" alt="" class="func__img">
+                <div class="top-block__main">
+                    <h2 class="title top-block__title">Организация и автоматизация
+                        склада и предприятия</h2>
+                    <div class="top-block__desc-btns">
+                        <a class="btn top-block__about-btn" href="#">О продукте</a>
+                        <a class="btn top-block__how-btn" href="#">Как работает платформа</a>
                     </div>
-                    <div class="func__btn-wrapper">
-                        <button class="func__btn">Демонстрация работы</button>
+                    <div class="top-block__download-btns">
+                        <a class="btn btn_rect top-block__android" href="#">Скачать для Android</a>
+                        <a class="btn btn_rect top-block__windows" href="#">Скачать для Windows</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="clients" id="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="block__title">Клиенты</h3>
-                    <div class="swiper-container clients__slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide clients__slide" v-for="client in clients">
-                                <a v-bind:href="client.link" class="clients__link">
-                                    <img  class="clients__img animated"
-                                         v-bind:src="client.imgUrl"
-                                         v-bind:alt="client.alt"
-                                         v-bind:class="{ rubberBand: client.isActive}"
-                                         v-on:mouseover="client.isActive = !client.isActive"
-                                         v-on:mouseout="client.isActive = !client.isActive">
-                                </a>
+        <section class="container">
+            <div class="companies" id="companies">
+                <h3 class="title companies__title">Программное обеспечение для предприятий</h3>
+                <div class="companies__list row">
+                    <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                        <article class="companies__item" v-on:click="details.shopDetails = !details.shopDetails">
+                            <a class="companies__img">
+                                <i class="companies__img-inner companies__img-inner1"></i>
+                            </a>
+                            <a class="companies__name">Магазин</a>
+                        </article>
+                    </div>
+                    <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                        <article class="companies__item"  v-on:click="details.warehouseDetails = !details.warehouseDetails">
+                            <a class="companies__img"><i class="companies__img-inner companies__img-inner2"></i></a>
+                            <a class="companies__name">Склад</a>
+                        </article>
+                    </div>
+                    <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                        <article class="companies__item"  v-on:click="details.productionDetails = !details.productionDetails">
+                            <a class="companies__img"><i class="companies__img-inner companies__img-inner3"></i></a>
+                            <a class="companies__name">Производство</a>
+                        </article>
+                    </div>
+                    <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                        <article class="companies__item"  v-on:click="details.soeDetails = !details.soeDetails">
+                            <a class="companies__img"><i class="companies__img-inner companies__img-inner4"></i></a>
+                            <a class="companies__name">Госпредприятия</a>
+                        </article>
+                    </div>
+                    <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                        <article class="companies__item"  v-on:click="details.companiesDetails = !details.companiesDetails">
+                            <a class="companies__img"><i class="companies__img-inner companies__img-inner5"></i></a>
+                            <a class="companies__name">Учреждения</a>
+                        </article>
+                    </div>
+                    <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
+                        <article class="companies__item"  v-on:click="details.banksDetails = !details.banksDetails">
+                            <a class="companies__img"><i class="companies__img-inner companies__img-inner6"></i></a>
+                            <a class="companies__name">Банки</a>
+                        </article>
+                    </div>
+
+                    <transition name="fall">
+                        <section class="popup" v-show="details.shopDetails" v-cloak>
+                            <button class="popup__cross" type="button" v-on:click="details.shopDetails = !details.shopDetails"></button>
+                            <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
+                            <div class="popup__info">
+                                <div class="popup__img-wrap">
+                                    <img class="popup__img" src="img/popup-shop.png" alt="">
+                                </div>
+                                <div class="popup__desc">
+                                    <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
+                                    <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
+                                    </p>
+
+                                    <p class="pupup__ul-title">Позволяет:</p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
+                                        <li class="popup__li">количественный сбор информации;</li>
+                                        <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
+                                        <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
+                                    </ul>
+
+                                    <p class="pupup__ul-title"><i>Дополнительно:</i></p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
+                                        <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="popup__form-container">
+                                <div class="form-block__wrapper">
+                                    <h3 class="block__title block__title_popup">Подключить RightLog</h3>
+                                    <zakaz form-id="form_shop"></zakaz>
+                                </div>
+                            </div>
+                        </section>
+                    </transition>
+
+                    <transition name="fall">
+                        <section class="popup" v-show="details.warehouseDetails" v-cloak>
+                            <button class="popup__cross" type="button" v-on:click="details.warehouseDetails = !details.warehouseDetails"></button>
+                            <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
+                            <div class="popup__info">
+                                <div class="popup__img-wrap">
+                                    <img class="popup__img" src="img/popup-shop.png" alt="">
+                                </div>
+                                <div class="popup__desc">
+                                    <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
+                                    <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
+                                    </p>
+
+                                    <p class="pupup__ul-title">Позволяет:</p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
+                                        <li class="popup__li">количественный сбор информации;</li>
+                                        <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
+                                        <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
+                                    </ul>
+
+                                    <p class="pupup__ul-title"><i>Дополнительно:</i></p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
+                                        <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="popup__form-container">
+                                <div class="form-block__wrapper">
+                                    <h3 class="block__title block__title_popup">Подключить RightLog</h3>
+                                    <zakaz form-id="form_warehouse"></zakaz>
+                                </div>
+                            </div>
+                        </section>
+                    </transition>
+
+                    <transition name="fall">
+                        <section class="popup" v-show="details.productionDetails" v-cloak>
+                            <button class="popup__cross" type="button" v-on:click="details.productionDetails = !details.productionDetails"></button>
+                            <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
+                            <div class="popup__info">
+                                <div class="popup__img-wrap">
+                                    <img class="popup__img" src="img/popup-shop.png" alt="">
+                                </div>
+                                <div class="popup__desc">
+                                    <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
+                                    <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
+                                    </p>
+
+                                    <p class="pupup__ul-title">Позволяет:</p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
+                                        <li class="popup__li">количественный сбор информации;</li>
+                                        <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
+                                        <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
+                                    </ul>
+
+                                    <p class="pupup__ul-title"><i>Дополнительно:</i></p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
+                                        <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="popup__form-container">
+                                <div class="form-block__wrapper">
+                                    <h3 class="block__title block__title_popup">Подключить RightLog</h3>
+                                    <zakaz form-id="form_production"></zakaz>
+                                </div>
+                            </div>
+                        </section>
+                    </transition>
+
+                    <transition name="fall">
+                        <section class="popup" v-show="details.soeDetails" v-cloak>
+                            <button class="popup__cross" type="button" v-on:click="details.soeDetails = !details.soeDetails"></button>
+                            <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
+                            <div class="popup__info">
+                                <div class="popup__img-wrap">
+                                    <img class="popup__img" src="img/popup-shop.png" alt="">
+                                </div>
+                                <div class="popup__desc">
+                                    <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
+                                    <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
+                                    </p>
+
+                                    <p class="pupup__ul-title">Позволяет:</p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
+                                        <li class="popup__li">количественный сбор информации;</li>
+                                        <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
+                                        <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
+                                    </ul>
+
+                                    <p class="pupup__ul-title"><i>Дополнительно:</i></p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
+                                        <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="popup__form-container">
+                                <div class="form-block__wrapper">
+                                    <h3 class="block__title block__title_popup">Подключить RightLog</h3>
+                                    <zakaz form-id="form_seo"></zakaz>
+                                </div>
+                            </div>
+                        </section>
+                    </transition>
+
+                    <transition name="fall">
+                        <section class="popup" v-show="details.companiesDetails" v-cloak>
+                            <button class="popup__cross" type="button" v-on:click="details.companiesDetails = !details.companiesDetails"></button>
+                            <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
+                            <div class="popup__info">
+                                <div class="popup__img-wrap">
+                                    <img class="popup__img" src="img/popup-shop.png" alt="">
+                                </div>
+                                <div class="popup__desc">
+                                    <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
+                                    <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
+                                    </p>
+
+                                    <p class="pupup__ul-title">Позволяет:</p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
+                                        <li class="popup__li">количественный сбор информации;</li>
+                                        <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
+                                        <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
+                                    </ul>
+
+                                    <p class="pupup__ul-title"><i>Дополнительно:</i></p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
+                                        <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="popup__form-container">
+                                <div class="form-block__wrapper">
+                                    <h3 class="block__title block__title_popup">Подключить RightLog</h3>
+                                    <zakaz form-id="form_companies"></zakaz>
+                                </div>
+                            </div>
+                        </section>
+                    </transition>
+
+                    <transition name="fall">
+                        <section class="popup" v-show="details.banksDetails" v-cloak>
+                            <button class="popup__cross" type="button" v-on:click="details.banksDetails = !details.banksDetails"></button>
+                            <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
+                            <div class="popup__info">
+                                <div class="popup__img-wrap">
+                                    <img class="popup__img" src="img/popup-shop.png" alt="">
+                                </div>
+                                <div class="popup__desc">
+                                    <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
+                                    <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
+                                    </p>
+
+                                    <p class="pupup__ul-title">Позволяет:</p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
+                                        <li class="popup__li">количественный сбор информации;</li>
+                                        <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
+                                        <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
+                                    </ul>
+
+                                    <p class="pupup__ul-title"><i>Дополнительно:</i></p>
+                                    <ul class="popup__ul">
+                                        <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
+                                        <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="popup__form-container">
+                                <div class="form-block__wrapper">
+                                    <h3 class="block__title block__title_popup">Подключить RightLog</h3>
+                                    <zakaz form-id="form_banks"></zakaz>
+                                </div>
+                            </div>
+                        </section>
+                    </transition>
+
+                    <transition name="cover">
+                        <div class="cover" v-if="coverActive" v-cloak></div>
+                    </transition>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="func">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="block__title">Функционал мобильной платформы RightLog</h3>
+                    </div>
+                    <div class="col-md-5 col-sm-7">
+                        <div class="func__features">
+                            <div class="func__feature func__feature_client-sever">
+                                <p class="func__feature-title">Клиент-сервер</p>
+                                <p class="func__feature-desc">Постоянная синхронизация позволяет управлять складом или магазином где угодно.</p>
+                            </div>
+                            <div class="func__feature func__feature_cross-platform">
+                                <p class="func__feature-title">Кроссплатформа</p>
+                                <p class="func__feature-desc">Программа работает с оперционными системами Windows CE, Windows Mobile, Android.</p>
+                            </div>
+                            <div class="func__feature func__feature_integration">
+                                <p class="func__feature-title">Интеграция</p>
+                                <p class="func__feature-desc">Легко интегрируется в вашу учетную систему 1С:Предприятие или любую другую.</p>
+                            </div>
+                            <div class="func__feature func__feature_simplicity">
+                                <p class="func__feature-title">Простота и функциональность</p>
+                                <p class="func__feature-desc">Простой и понятный программный продукт,
+                                    предлагает действительно то, что вам необходимо для автоматизации операций.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="col-md-7 col-sm-5">
+                        <div class="func__img-wrapper">
+                            <img src="img/func-img.png" alt="" class="func__img">
+                        </div>
+                        <div class="func__btn-wrapper">
+                            <button class="func__btn">Демонстрация работы</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="download">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="block__title block__title_light">Скачать приложение</h3>
-                    <p class="download__desc">Платформа разработана для ТСД и мобильных телефонов</p>
-                    <div class="download__btn-wrapper">
-                        <button class="download__btn download__btn_win">Windows CE 6.0</button>
-                        <button class="download__btn download__btn_win">Windows Mobile 6.x</button>
-                        <button class="download__btn download__btn_android">Android</button>
+        <section class="clients" id="clients">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="block__title">Клиенты</h3>
+                        <div class="swiper-container clients__slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide clients__slide" v-for="client in clients">
+                                    <a v-bind:href="client.link" class="clients__link">
+                                        <img  class="clients__img animated"
+                                              v-bind:src="client.imgUrl"
+                                              v-bind:alt="client.alt"
+                                              v-bind:class="{ rubberBand: client.isActive}"
+                                              v-on:mouseover="client.isActive = !client.isActive"
+                                              v-on:mouseout="client.isActive = !client.isActive">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="form-block" id="form">
-        <div class="container">
-            <div class="form-block__wrapper">
-                <h3 class="block__title">Подключить RightLog</h3>
-                <form action="" class="form">
-                    <label class="form__label">
-                        <select class="form__select selectpicker" name="business" >
-                            <option class="form__option" value="default-business" selected>Сфера деятельности</option>
-                            <option class="form__option" value="shop" >Магазин</option>
-                            <option class="form__option" value="warehouse" >Склад</option>
-                            <option class="form__option" value="production" >Производство</option>
-                            <option class="form__option" value="state-enterprise" >Госпредприятия</option>
-                            <option class="form__option" value="organization" >Учреждения</option>
-                            <option class="form__option" value="bank" >Банк</option>
-                        </select>
-                    </label>
-                    <label class="form__label">
-                        <select class="form__select" name="accounting-system" >
-                            <option class="form__option" value="default-system" selected>Система учета</option>
-                            <option class="form__option" value="one" >Один</option>
-                            <option class="form__option" value="two" >Два</option>
-                        </select>
-                    </label>
-
-                    <label class="form__label">
-                        <input class="form__input" type="text" name="name" placeholder="Ваше имя">
-                    </label>
-                    <label class="form__label">
-                        <input class="form__input" type="text" name="phone-email" placeholder="Телефон или email">
-                    </label>
-
-                    <label class="form__label form__label_txtarea ">
-                        <textarea class="form__textarea" name="message"  cols="30" rows="10"></textarea>
-                    </label>
-
-                    <button class="form__btn" type="submit">Отправить запрос на подключение</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__wrapper">
-                <div class="footer__info">
-                    <div class="footer__contacts">
-                        <div class="footer__contact-left">
-                            <p class="footer__address">ул. Машиностроителей, 29, оф. 28  Минск, 222220, РБ </p>
-                            <ul class="footer__tel-wrapper">
-                                <li class="footer__tel">+375 (17) 387-05-05</li>
-                                <li class="footer__tel">+375 (17) 387-05-06</li>
-                                <li class="footer__tel">+375 (33) 666-64-83</li>
-                                <li class="footer__tel">+375 (33) 666-64-97</li>
-                            </ul>
-                            <a href="mailto:office@yudway.by" class="footer__link">office@yudway.by</a>
-                        </div>
-                        <div class="footer__contect-right">
-                            <p class="footer__subtitle">Техподдержка</p>
-                            <ul class="footer__tel-wrapper">
-                                <li class="footer__tel">+375 (17) 387-05-50</li>
-                            </ul>
-                            <a href="mailto:support@yudway.by" class="footer__link">support@yudway.by</a>
+        <section class="download">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="block__title block__title_light">Скачать приложение</h3>
+                        <p class="download__desc">Платформа разработана для ТСД и мобильных телефонов</p>
+                        <div class="download__btn-wrapper">
+                            <button class="download__btn download__btn_win">Windows CE 6.0</button>
+                            <button class="download__btn download__btn_win">Windows Mobile 6.x</button>
+                            <button class="download__btn download__btn_android">Android</button>
                         </div>
                     </div>
-                    <p class="footer__copy">&#169; 2017 ООО «Юдвэй»</p>
-                </div>
-                <div class="footer__map">
-                    <p class="footer__address footer__address_mobile">ул. Машиностроителей, 29, оф. 28  Минск, 222220, РБ </p>
-                    <div id="map" ></div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
+        <section class="form-block" id="form">
+            <div class="container">
+                <div class="form-block__wrapper">
+                    <h3 class="block__title">Подключить RightLog</h3>
+                    <zakaz form-id="form_zakaz"></zakaz>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <div class="footer__info">
+                        <div class="footer__contacts">
+                            <div class="footer__contact-left">
+                                <p class="footer__address">ул. Машиностроителей, 29, оф. 28  Минск, 222220, РБ </p>
+                                <ul class="footer__tel-wrapper">
+                                    <li class="footer__tel">+375 (17) 387-05-05</li>
+                                    <li class="footer__tel">+375 (17) 387-05-06</li>
+                                    <li class="footer__tel">+375 (33) 666-64-83</li>
+                                    <li class="footer__tel">+375 (33) 666-64-97</li>
+                                </ul>
+                                <a href="mailto:office@yudway.by" class="footer__link">office@yudway.by</a>
+                            </div>
+                            <div class="footer__contect-right">
+                                <p class="footer__subtitle">Техподдержка</p>
+                                <ul class="footer__tel-wrapper">
+                                    <li class="footer__tel">+375 (17) 387-05-50</li>
+                                </ul>
+                                <a href="mailto:support@yudway.by" class="footer__link">support@yudway.by</a>
+                            </div>
+                        </div>
+                        <p class="footer__copy">&#169; 2017 ООО «Юдвэй»</p>
+                    </div>
+                    <div class="footer__map">
+                        <p class="footer__address footer__address_mobile">ул. Машиностроителей, 29, оф. 28  Минск, 222220, РБ </p>
+                        <div id="map" ></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <script src="libs/vue/dist/vue.js"></script>
     <script src="libs/jquery/dist/jquery.min.js"></script>
