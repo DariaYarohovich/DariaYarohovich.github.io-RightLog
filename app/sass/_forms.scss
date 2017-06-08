@@ -128,13 +128,21 @@
   @include trans();
 }
 
-.form__btn:hover {
+.form__btn:hover:enabled {
   background: $white;
   color: $green2;
   transform: scale(1.04);
 }
 
+.form__btn:disabled {
+  border: 1px solid $form-field;
+  background: $form-field;
+}
 
+.form__success {
+  text-align: center;
+  color: $green2;
+}
 
 
 @media (max-width: $sm) {

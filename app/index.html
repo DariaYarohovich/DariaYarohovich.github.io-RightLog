@@ -122,7 +122,7 @@
                             <div class="popup__form-container">
                                 <div class="form-block__wrapper">
                                     <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                    <zakaz form-id="form_shop"></zakaz>
+                                    <order form-id="form_shop" v-bind:options="form" v-bind:status="buttonStatus"></order>
                                 </div>
                             </div>
                         </section>
@@ -160,7 +160,7 @@
                             <div class="popup__form-container">
                                 <div class="form-block__wrapper">
                                     <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                    <zakaz form-id="form_warehouse"></zakaz>
+                                    <order form-id="form_warehouse" v-bind:options="form" v-bind:status="buttonStatus"></order>
                                 </div>
                             </div>
                         </section>
@@ -198,7 +198,7 @@
                             <div class="popup__form-container">
                                 <div class="form-block__wrapper">
                                     <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                    <zakaz form-id="form_production"></zakaz>
+                                    <order form-id="form_production" v-bind:options="form" v-bind:status="buttonStatus"></order>
                                 </div>
                             </div>
                         </section>
@@ -236,7 +236,7 @@
                             <div class="popup__form-container">
                                 <div class="form-block__wrapper">
                                     <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                    <zakaz form-id="form_seo"></zakaz>
+                                    <order form-id="form_seo" v-bind:options="form" v-bind:status="buttonStatus"></order>
                                 </div>
                             </div>
                         </section>
@@ -274,7 +274,7 @@
                             <div class="popup__form-container">
                                 <div class="form-block__wrapper">
                                     <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                    <zakaz form-id="form_companies"></zakaz>
+                                    <order form-id="form_companies" v-bind:options="form" v-bind:status="buttonStatus"></order>
                                 </div>
                             </div>
                         </section>
@@ -312,7 +312,7 @@
                             <div class="popup__form-container">
                                 <div class="form-block__wrapper">
                                     <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                    <zakaz form-id="form_banks"></zakaz>
+                                    <order form-id="form_banks" v-bind:options="form" v-bind:status="buttonStatus"></order>
                                 </div>
                             </div>
                         </section>
@@ -411,7 +411,7 @@
             <div class="container">
                 <div class="form-block__wrapper">
                     <h3 class="block__title">Подключить RightLog</h3>
-                    <zakaz form-id="form_zakaz"></zakaz>
+                    <order form-id="form_zakaz" v-bind:options="form" v-bind:status="buttonStatus"></order>
                 </div>
             </div>
         </section>
@@ -449,6 +449,45 @@
             </div>
         </footer>
     </div>
+
+    <script type="text/x-template" id="order">
+        <form class="form" v-bind:id="formId" v-if="formVisible">
+            <input type="hidden" name="type" value="Подключить RightLog" >
+
+            <label class="form__label">
+                <select class="form__select"  name="business">
+                    <option class="form__option" value="Сфера деятельности" selected>Сфера деятельности</option>
+                    <option class="form__option" value="Магазин" >Магазин</option>
+                    <option class="form__option" value="Склад" >Склад</option>
+                    <option class="form__option" value="Производство" >Производство</option>
+                    <option class="form__option" value="Госпредприятия" >Госпредприятия</option>
+                    <option class="form__option" value="Учреждения" >Учреждения</option>
+                    <option class="form__option" value="Банк" >Банк</option>
+                </select>
+            </label>
+            <label class="form__label">
+                <select class="form__select" name="accounting-system">
+                    <option class="form__option" value="Систма учета" selected>Система учета</option>
+                    <option class="form__option" value="Один" >Один</option>
+                    <option class="form__option" value="Два" >Два</option>
+                    </select>
+                </label>
+
+            <label class="form__label">
+                <input class="form__input" type="text" name="name" placeholder="Ваше имя" v-model="options.name">
+            </label>
+            <label class="form__label">
+                <input class="form__input" type="text" name="phone-email" placeholder="Телефон или email" v-model="options.contact">
+            </label>
+
+            <label class="form__label form__label_txtarea " >
+            <textarea class="form__textarea" name="message"  cols="30" rows="10" placeholder="Ваше сообщение" v-model="options.message"></textarea>
+            </label>
+
+            <button class="form__btn" type="submit" v-bind:disabled="status" v-on:click="showMessage()">Отправить запрос на подключение</button>
+            </form>
+        <div class="form__success" v-else><h3>Ваше сообщение успешно отправлено!</h3></div>
+    </script>
 
     <script src="libs/vue/dist/vue.js"></script>
     <script src="libs/jquery/dist/jquery.min.js"></script>

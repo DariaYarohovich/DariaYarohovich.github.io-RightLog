@@ -1,43 +1,18 @@
 
-Vue.component("zakaz", {
-    props: ['form-id'],
-	template: "<form class=\"form\" v-bind:id=\"formId\">"+
-                "<input type=\"hidden\" name=\"type\" value=\"Подключить RightLog\" >"+
-
-                "<label class=\"form__label\">"+
-                    "<select class=\"form__select selectpicker\" name=\"business\" >"+
-                        "<option class=\"form__option\" value=\"default-business\" selected>Сфера деятельности</option>"+
-                        "<option class=\"form__option\" value=\"shop\" >Магазин</option>"+
-                        "<option class=\"form__option\" value=\"warehouse\" >Склад</option>"+
-                        "<option class=\"form__option\" value=\"production\" >Производство</option>"+
-                        "<option class=\"form__option\" value=\"state-enterprise\" >Госпредприятия</option>"+
-                        "<option class=\"form__option\" value=\"organization\" >Учреждения</option>"+
-                        "<option class=\"form__option\" value=\"bank\" >Банк</option>"+
-                    "</select>"+
-                "</label>"+
-                "<label class=\"form__label\">"+
-                    "<select class=\"form__select\" name=\"accounting-system\" >"+
-                        "<option class=\"form__option\" value=\"default-system\" selected>Система учета</option>"+
-                        "<option class=\"form__option\" value=\"one\" >Один</option>"+
-                        "<option class=\"form__option\" value=\"two\" >Два</option>"+
-                    "</select>"+
-                "</label>"+
-
-                "<label class=\"form__label\">"+
-                    "<input class=\"form__input\" type=\"text\" name=\"name\" placeholder=\"Ваше имя\">"+
-                "</label>"+
-                "<label class=\"form__label\">"+
-                    "<input class=\"form__input\" type=\"text\" name=\"phone-email\" placeholder=\"Телефон или email\">"+
-                "</label>"+
-
-                "<label class=\"form__label form__label_txtarea \">"+
-                    "<textarea class=\"form__textarea\" name=\"message\"  cols=\"30\" rows=\"10\"></textarea>"+
-                "</label>"+
-
-                "<button class=\"form__btn\" type=\"submit\">Отправить запрос на подключение</button>"+
-                "</form>"
+Vue.component("order", {
+    props: ['form-id', 'options', 'status'],
+    data: function() {
+        return {
+            formVisible: true
+        }
+    },
+    methods: {
+        showMessage: function() {
+            this.formVisible = !this.formVisible;
+        }
+    },
+	template: "#order"
 });
-
 
 
 
@@ -77,7 +52,12 @@ var app = new Vue({
 			soeDetails: false,
 			companiesDetails: false,
 			banksDetails: false
-		}
+		},
+        form: {
+            name: "",
+            contact: "",
+            message: "",
+        }
 	},
 	computed: {
 		coverActive: function() {
@@ -89,7 +69,15 @@ var app = new Vue({
 				}
 			}
 			return counter;
-		}
+		},
+        buttonStatus: function() {
+		    var result = true;
+
+            if (this.form.name && this.form.contact) {
+                result = false;
+            }
+            return result;
+        }
 	}
 });
 
@@ -117,12 +105,16 @@ var swiper = new Swiper(".swiper-container", {
 	}
 });
 
+
+
 // select option customize
 (function($) {
 	$(function() {
 		$("select").styler();
 	});
 })(jQuery);
+
+
 
 // yandex map
 ymaps.ready(init);
@@ -211,8 +203,7 @@ function init () {
 })();
 
 
-//forms
-
+//send forms
 $( "#form_zakaz" ).on( "submit", function( event ) {
 	event.preventDefault();
 	sendMail(this);
