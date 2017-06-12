@@ -1,16 +1,16 @@
 
 Vue.component("order", {
-    props: ['form-id', 'options', 'status'],
-    data: function() {
-        return {
-            formVisible: true
-        }
-    },
-    methods: {
-        showMessage: function() {
-            this.formVisible = !this.formVisible;
-        }
-    },
+	props: ["form-id", "options", "status"],
+	data: function() {
+		return {
+			formVisible: true
+		};
+	},
+	methods: {
+		showMessage: function() {
+			this.formVisible = !this.formVisible;
+		}
+	},
 	template: "#order"
 });
 
@@ -43,6 +43,12 @@ var app = new Vue({
 				imgUrl: "img/client4.png",
 				alt: "",
 				isActive: false
+			},
+			{
+				link: "#",
+				imgUrl: "img/client1.png",
+				alt: "",
+				isActive: false
 			}
 		],
 		details: {
@@ -53,31 +59,46 @@ var app = new Vue({
 			companiesDetails: false,
 			banksDetails: false
 		},
-        form: {
-            name: "",
-            contact: "",
-            message: "",
-        }
+		form: {
+			name: "",
+			contact: "",
+			message: ""
+		},
+		popUpY: 0
 	},
 	computed: {
 		coverActive: function() {
 			var counter = false;
 
-			for (key in this.details) {
+			for (var key in this.details) {
 				if (this.details[key] === true) {
 					counter = true;
 				}
 			}
 			return counter;
 		},
-        buttonStatus: function() {
-		    var result = true;
+		buttonStatus: function() {
+            var result = true;
 
-            if (this.form.name && this.form.contact) {
-                result = false;
-            }
-            return result;
-        }
+			if (this.form.name && this.form.contact) {
+				result = false;
+			}
+			return result;
+		}
+	},
+	methods: {
+		closeForm: function() {
+			for (var key in this.details) {
+				if (this.details[key] === true) {
+					this.details[key] = false;
+				}
+			}
+		},
+		showPopUp: function(name) {
+			this.popUpY = window.pageYOffset + (document.documentElement.clientHeight / 2) - 200;
+            this.details[name] = !this.details[name];
+
+		}
 	}
 });
 
@@ -87,7 +108,7 @@ var swiper = new Swiper(".swiper-container", {
 	pagination: ".swiper-pagination",
 	nextButton: ".swiper-button-next",
 	prevButton: ".swiper-button-prev",
-	paginationClickable: true,
+	loop: true,
     // Default parameters
 	slidesPerView: 4,
 	spaceBetween: 70,
@@ -104,7 +125,6 @@ var swiper = new Swiper(".swiper-container", {
 		}
 	}
 });
-
 
 
 // select option customize
@@ -210,33 +230,33 @@ $( "#form_zakaz" ).on( "submit", function( event ) {
 });
 
 $( "#form_shop" ).on( "submit", function( event ) {
-    event.preventDefault();
-    sendMail(this);
+	event.preventDefault();
+	sendMail(this);
 });
 
 $( "#form_warehouse" ).on( "submit", function( event ) {
-    event.preventDefault();
-    sendMail(this);
+	event.preventDefault();
+	sendMail(this);
 });
 
 $( "#form_production" ).on( "submit", function( event ) {
-    event.preventDefault();
-    sendMail(this);
+	event.preventDefault();
+	sendMail(this);
 });
 
 $( "#form_seo" ).on( "submit", function( event ) {
-    event.preventDefault();
-    sendMail(this);
+	event.preventDefault();
+	sendMail(this);
 });
 
 $( "#form_companies" ).on( "submit", function( event ) {
-    event.preventDefault();
-    sendMail(this);
+	event.preventDefault();
+	sendMail(this);
 });
 
 $( "#form_banks" ).on( "submit", function( event ) {
-    event.preventDefault();
-    sendMail(this);
+	event.preventDefault();
+	sendMail(this);
 });
 
 
@@ -248,3 +268,24 @@ function sendMail(form) {
 	});
 }
 
+// sticky header
+
++(function() {
+    var header = document.querySelector('.top-block__header');
+    var srcSetArr = header.querySelectorAll('source');
+    var origOffsetY = header.offsetTop;
+
+    function onScroll(e) {
+        if (window.scrollY >= origOffsetY) {
+             header.classList.add('sticky');
+            srcSetArr[0].srcset = 'img/logo-sticky.png';
+            srcSetArr[1].srcset = 'img/logo-sticky.png';
+		} else {
+            header.classList.remove('sticky');
+            srcSetArr[0].srcset = 'img/logo-mobile.png';
+            srcSetArr[1].srcset = 'img/logo-black.png';
+		}
+    }
+
+    document.addEventListener('scroll', onScroll);
+})();

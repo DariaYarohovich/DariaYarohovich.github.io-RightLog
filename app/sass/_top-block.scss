@@ -1,7 +1,8 @@
 .top-block {
-  background-image: url("../img/top-block-bg.png");
-  background-size: cover;
-  background-attachment: fixed;
+  background-image: url(../img/top-block-bg2.png),url(../img/top-block-bg1.jpg);
+  background-repeat: no-repeat;
+  background-position: right 100%;
+  background-size: auto 100%, cover;
 }
 
 .top-block__wrapper {
@@ -15,11 +16,31 @@
   background-position: 100% 107%, 74% 98%;
 }
 
+.top-block__head-wrap {
+  margin-bottom: 95px;
+  height: 75px;
+}
+
 .top-block__header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 95px;
 }
+
+.sticky {
+  position: fixed;
+  background: $font-gray;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: calc((100% - 1150px)/2);
+  padding-right: calc((100% - 1150px)/2);
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+
+
 
 .top-block__contacts {
   display: flex;
@@ -143,9 +164,21 @@
   color: $white;
 }
 
+@media (max-width: 1170px) {
+  .sticky {
+    padding-left: calc((100% - 940px)/2);
+    padding-right: calc((100% - 940px)/2);
+  }
+}
+
 @media (max-width: 991px) {
-  .top-block__header {
+  .top-block__head-wrap {
     margin-bottom: 55px;
+  }
+
+  .sticky {
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .top-block__phone {
@@ -187,6 +220,14 @@
 @media (max-width: 768px) {
   .top-block {
     background-image: url("../img/top-block-bg-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .sticky {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .top-block__wrapper {

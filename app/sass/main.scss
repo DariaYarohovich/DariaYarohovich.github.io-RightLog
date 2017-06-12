@@ -15,6 +15,10 @@ body {
   color: $font-dark;
 }
 
+button {
+  outline: none;
+}
+
 .title {
   @include roboto(40px, 42px);
   color: $font-gray;

@@ -16,28 +16,30 @@
     <div id="app">
         <section class="top-block">
             <div class="top-block__wrapper container">
-                <div class="top-block__header">
-                    <a class="top-block__logo" href="#">
-                        <picture>
-                            <source media="(max-width: 768px)" srcset="img/logo-mobile.png">
-                            <source media="(max-width: 991px)" srcset="img/logo-black.png">
-                            <img src="img/logo.png">
-                        </picture>
-                    </a>
-                    <div class="top-block__contacts">
-                        <a href="tel:+375336666483" class="top-block__phone"><i>+375 33 666-64-83</i></a>
-                        <a class="btn top-block__order scroll" data-speed="1500" href="#form">
-                            <i class="top-block__order_desc">Заявка на подключение</i>
-                            <i class="top-block__order_mob">Подключить</i>
+                <div class="top-block__head-wrap">
+                    <div class="top-block__header">
+                        <a class="top-block__logo" href="#">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="img/logo-mobile.png">
+                                <source media="(max-width: 991px)" srcset="img/logo-black.png">
+                                <img src="img/logo.png">
+                            </picture>
                         </a>
+                        <div class="top-block__contacts">
+                            <a href="tel:+375336666483" class="top-block__phone"><i>+375 33 666-64-83</i></a>
+                            <a class="btn top-block__order scroll" data-speed="500" href="#form">
+                                <i class="top-block__order_desc">Заявка на подключение</i>
+                                <i class="top-block__order_mob">Подключить</i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="top-block__main">
                     <h2 class="title top-block__title">Организация и автоматизация
                         склада и предприятия</h2>
                     <div class="top-block__desc-btns">
-                        <a class="btn top-block__about-btn" href="#">О продукте</a>
-                        <a class="btn top-block__how-btn" href="#">Как работает платформа</a>
+                        <a class="btn top-block__about-btn scroll" data-speed="500" href="#about">О продукте</a>
+                        <a class="btn top-block__how-btn" href="http://yudway.by/demorlweb/" target="_blank">Как работает платформа</a>
                     </div>
                     <div class="top-block__download-btns">
                         <a class="btn btn_rect top-block__android" href="#">Скачать для Android</a>
@@ -52,7 +54,7 @@
                 <h3 class="title companies__title">Программное обеспечение для предприятий</h3>
                 <div class="companies__list row">
                     <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                        <article class="companies__item" v-on:click="details.shopDetails = !details.shopDetails">
+                        <article class="companies__item" v-on:click="showPopUp('shopDetails')">
                             <a class="companies__img">
                                 <i class="companies__img-inner companies__img-inner1"></i>
                             </a>
@@ -60,76 +62,75 @@
                         </article>
                     </div>
                     <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                        <article class="companies__item"  v-on:click="details.warehouseDetails = !details.warehouseDetails">
+                        <article class="companies__item"  v-on:click="showPopUp('warehouseDetails')">
                             <a class="companies__img"><i class="companies__img-inner companies__img-inner2"></i></a>
                             <a class="companies__name">Склад</a>
                         </article>
                     </div>
                     <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                        <article class="companies__item"  v-on:click="details.productionDetails = !details.productionDetails">
+                        <article class="companies__item"  v-on:click="showPopUp('productionDetails')">
                             <a class="companies__img"><i class="companies__img-inner companies__img-inner3"></i></a>
                             <a class="companies__name">Производство</a>
                         </article>
                     </div>
                     <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                        <article class="companies__item"  v-on:click="details.soeDetails = !details.soeDetails">
+                        <article class="companies__item"  v-on:click="showPopUp('soeDetails')">
                             <a class="companies__img"><i class="companies__img-inner companies__img-inner4"></i></a>
                             <a class="companies__name">Госпредприятия</a>
                         </article>
                     </div>
                     <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                        <article class="companies__item"  v-on:click="details.companiesDetails = !details.companiesDetails">
+                        <article class="companies__item"  v-on:click="showPopUp('companiesDetails')">
                             <a class="companies__img"><i class="companies__img-inner companies__img-inner5"></i></a>
                             <a class="companies__name">Учреждения</a>
                         </article>
                     </div>
                     <div class="companies__item-wrap col-md-4 col-sm-4 col-xs-6">
-                        <article class="companies__item"  v-on:click="details.banksDetails = !details.banksDetails">
+                        <article class="companies__item"  v-on:click="showPopUp('banksDetails')">
                             <a class="companies__img"><i class="companies__img-inner companies__img-inner6"></i></a>
                             <a class="companies__name">Банки</a>
                         </article>
                     </div>
-
-                    <transition name="fall">
-                        <section class="popup" v-show="details.shopDetails" v-cloak>
-                            <button class="popup__cross" type="button" v-on:click="details.shopDetails = !details.shopDetails"></button>
-                            <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
-                            <div class="popup__info">
-                                <div class="popup__img-wrap">
-                                    <img class="popup__img" src="img/popup-shop.png" alt="">
-                                </div>
-                                <div class="popup__desc">
-                                    <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
-                                    <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
-                                    </p>
-
-                                    <p class="pupup__ul-title">Позволяет:</p>
-                                    <ul class="popup__ul">
-                                        <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
-                                        <li class="popup__li">количественный сбор информации;</li>
-                                        <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
-                                        <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
-                                    </ul>
-
-                                    <p class="pupup__ul-title"><i>Дополнительно:</i></p>
-                                    <ul class="popup__ul">
-                                        <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
-                                        <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
-                                    </ul>
-                                </div>
+                </div>
+                <transition name="fall">
+                    <section class="popup" v-show="details.shopDetails" v-cloak v-bind:style="{top: popUpY + 'px'}">
+                        <button class="popup__cross" type="button" v-on:click="details.shopDetails = !details.shopDetails"></button>
+                        <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
+                        <div class="popup__info">
+                            <div class="popup__img-wrap">
+                                <img class="popup__img" src="img/popup-shop.png" alt="">
                             </div>
+                            <div class="popup__desc">
+                                <p class="popup__txt"><b>RightLog</b> оптимальное решение для автоматизации процесса инвентаризации.</p>
+                                <p class="popup__txt">Решение основано на мобильной платформе RightLog и совместимо c 1С.
+                                </p>
 
-                            <div class="popup__form-container">
-                                <div class="form-block__wrapper">
-                                    <h3 class="block__title block__title_popup">Подключить RightLog</h3>
-                                    <order form-id="form_shop" v-bind:options="form" v-bind:status="buttonStatus"></order>
-                                </div>
+                                <p class="pupup__ul-title">Позволяет:</p>
+                                <ul class="popup__ul">
+                                    <li class="popup__li">осуществить выгрузку базы Номенклатуры товара из учетной системы в ТСД;</li>
+                                    <li class="popup__li">количественный сбор информации;</li>
+                                    <li class="popup__li">контроль соответствия товара наименованию из базы Номенклатур;</li>
+                                    <li class="popup__li">после завершения сбора информации данные выгружаются в учетную систему пользователя.</li>
+                                </ul>
+
+                                <p class="pupup__ul-title"><i>Дополнительно:</i></p>
+                                <ul class="popup__ul">
+                                    <li class="popup__li">работа в режиме Online (не требует загрузки базы Номенклатуры в ТСД, поиск товара по ШК осуществляется напрямую из учетной системы через WiFi);</li>
+                                    <li class="popup__li">мониторинг актуальной цены товара из базы данных.</li>
+                                </ul>
                             </div>
-                        </section>
-                    </transition>
+                        </div>
 
-                    <transition name="fall">
-                        <section class="popup" v-show="details.warehouseDetails" v-cloak>
+                        <div class="popup__form-container">
+                            <div class="form-block__wrapper">
+                                <h3 class="block__title block__title_popup">Подключить RightLog</h3>
+                                <order form-id="form_shop" v-bind:options="form" v-bind:status="buttonStatus"></order>
+                            </div>
+                        </div>
+                    </section>
+                </transition>
+                <transition name="fall">
+                        <section class="popup" v-show="details.warehouseDetails" v-cloak v-bind:style="{top: popUpY + 'px'}">
                             <button class="popup__cross" type="button" v-on:click="details.warehouseDetails = !details.warehouseDetails"></button>
                             <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
                             <div class="popup__info">
@@ -165,9 +166,8 @@
                             </div>
                         </section>
                     </transition>
-
-                    <transition name="fall">
-                        <section class="popup" v-show="details.productionDetails" v-cloak>
+                <transition name="fall">
+                        <section class="popup" v-show="details.productionDetails" v-cloak v-bind:style="{top: popUpY + 'px'}">
                             <button class="popup__cross" type="button" v-on:click="details.productionDetails = !details.productionDetails"></button>
                             <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
                             <div class="popup__info">
@@ -203,9 +203,8 @@
                             </div>
                         </section>
                     </transition>
-
-                    <transition name="fall">
-                        <section class="popup" v-show="details.soeDetails" v-cloak>
+                <transition name="fall">
+                        <section class="popup" v-show="details.soeDetails" v-cloak v-bind:style="{top: popUpY + 'px'}">
                             <button class="popup__cross" type="button" v-on:click="details.soeDetails = !details.soeDetails"></button>
                             <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
                             <div class="popup__info">
@@ -241,9 +240,8 @@
                             </div>
                         </section>
                     </transition>
-
-                    <transition name="fall">
-                        <section class="popup" v-show="details.companiesDetails" v-cloak>
+                <transition name="fall">
+                        <section class="popup" v-show="details.companiesDetails" v-cloak v-bind:style="{top: popUpY + 'px'}">
                             <button class="popup__cross" type="button" v-on:click="details.companiesDetails = !details.companiesDetails"></button>
                             <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
                             <div class="popup__info">
@@ -279,9 +277,8 @@
                             </div>
                         </section>
                     </transition>
-
-                    <transition name="fall">
-                        <section class="popup" v-show="details.banksDetails" v-cloak>
+                <transition name="fall">
+                        <section class="popup" v-show="details.banksDetails" v-cloak v-bind:style="{top: popUpY + 'px'}">
                             <button class="popup__cross" type="button" v-on:click="details.banksDetails = !details.banksDetails"></button>
                             <h2 class="popup__title">Инвентаризация товаров в магазинах</h2>
                             <div class="popup__info">
@@ -317,11 +314,9 @@
                             </div>
                         </section>
                     </transition>
-
-                    <transition name="cover">
-                        <div class="cover" v-if="coverActive" v-cloak></div>
+                <transition name="cover">
+                        <div class="cover" v-if="coverActive" v-cloak v-on:click="closeForm()"></div>
                     </transition>
-                </div>
 
             </div>
         </section>
@@ -329,7 +324,7 @@
         <section class="func">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="about">
                         <h3 class="block__title">Функционал мобильной платформы RightLog</h3>
                     </div>
                     <div class="col-md-5 col-sm-7">
@@ -353,12 +348,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7 col-sm-5">
+                    <div class="col-md-7 col-sm-5 func__right-col">
                         <div class="func__img-wrapper">
                             <img src="img/func-img.png" alt="" class="func__img">
                         </div>
                         <div class="func__btn-wrapper">
-                            <button class="func__btn">Демонстрация работы</button>
+                            <a class="func__btn" href="http://yudway.by/demorlweb/" target="_blank">Демонстрация работы</a>
                         </div>
                     </div>
                 </div>

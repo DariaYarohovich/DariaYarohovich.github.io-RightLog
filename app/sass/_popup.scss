@@ -21,6 +21,7 @@
   border-radius: 5px;
   padding-top: 55px;
   @include roboto(16px, 24px);
+  box-shadow: 0 0 35px 7px rgba(0,0,0,0.15);
 }
 
 .popup__title {
@@ -121,23 +122,19 @@
 }
 
 .fall-enter-active {
-  transition: all 1s ease;
+  transition: all .7s ease;
 }
 
 .fall-leave-active {
-  transition: all 2s ease;
+  transition: all 0.7s ease;
 }
 
 .fall-enter, .fall-leave-to {
-  top: -500%;
-  left: 50%;
-  transform: translate(-50%, 0);
+ opacity: 0;
 }
 
 .fall-enter-to, .fall-leave {
-  top: -10%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  opacity: 1;
 }
 
 

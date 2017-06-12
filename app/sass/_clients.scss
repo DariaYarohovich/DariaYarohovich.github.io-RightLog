@@ -5,7 +5,7 @@
 }
 
 .swiper-container {
-  width: 100%;
+  width: 95%;
 }
 
 .swiper-wrapper {
@@ -19,7 +19,20 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  display: none;
+  display: block;
+  top: 80%;
+  background-size: 27px;
+}
+
+.swiper-button-prev {
+  background-image: url('../img/arrow-left.png');
+  left: -10px;
+
+}
+
+.swiper-button-next {
+  background-image: url('../img/arrow-right.png');
+  right: -10px;
 }
 
 
@@ -51,9 +64,11 @@
 
   .swiper-button-prev {
     background-image: url('../img/arrow-left.png');
+    left: 10px;
   }
 
   .swiper-button-next {
     background-image: url('../img/arrow-right.png');
+    right: 10px;
   }
 }

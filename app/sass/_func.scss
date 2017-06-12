@@ -38,6 +38,12 @@ $func-icon: (
   @include roboto(16px, 30px);
 }
 
+.func__right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .func__img-wrapper {
   padding-top: 40px;
   padding-bottom: 33px;
@@ -70,6 +76,8 @@ $func-icon: (
   background-color: white;
   color: $green-btn;
   transform: scale(1.04);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 
